@@ -15,6 +15,19 @@
   <%= @service.price %>
 </p>
 
+<p>
+	<b>Categorias:</b>
+	<% if @service.categories.any? %>
+	<ul>
+	<% for category in @service.categories do %>
+		<li><%= category.name %></li>
+	<% end %>
+	</ul>
+	<% else %>
+		Nenhuma
+	<% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
